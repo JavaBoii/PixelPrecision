@@ -1,3 +1,4 @@
+-- Computer sender
 -- Setup
 local modem = peripheral.find("modem")  -- find the wireless modem
 modem.open(1)  -- open channel 1, change if needed
