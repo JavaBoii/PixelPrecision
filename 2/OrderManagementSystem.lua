@@ -6,7 +6,7 @@ modem.open(1)  -- Listen on channel 1 for orders
 modem.open(2)  -- Communicate with Computer A
 modem.open(3)  -- Communicate with Computer B
 print("Coordinator online. Waiting for orders on ch 1.")
-modem.transmit(101, 101, "Controll Center")  -- Send online status
+modem.transmit(101, 101, "Controll Center online")  -- Send online status
 
 local orderComplete = false
 local mode

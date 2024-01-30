@@ -3,7 +3,7 @@
 local modem = peripheral.wrap("top")
 modem.open(2)  -- Listen on channel 2
 modem.open(101)  -- Listen on channel 101
-modem.transmit(101, 101, "PowderChargeManager")  -- Send online status
+modem.transmit(101, 101, "PowderChargeManager online")  -- Send online status
 print("PowerChargeManager online. Listening on channel 2.")
 
 -- Main loop
@@ -12,9 +12,12 @@ while true do
     if senderChannel == 2 then
         print("Received message on channel 2: " .. tostring(message))
         local redstoneOutput = 0
-        if message == 3 then redstoneOutput = 2
-        elseif message == 2 then redstoneOutput = 5
-        elseif message == 1 then redstoneOutput = 13
+        if message == 3 then
+            redstoneOutput = 2
+        elseif message == 2 then
+            redstoneOutput = 5
+        elseif message == 1 then
+            redstoneOutput = 13
         end
 
         if redstoneOutput > 0 then

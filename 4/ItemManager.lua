@@ -7,7 +7,7 @@ local REDSTONE_SIDE = "right"  -- Dispenser side
 local modem = peripheral.wrap("back")
 modem.open(3)  -- Listen on channel 3
 modem.open(101)  -- Listen on channel 101
-modem.transmit(101, 101, "ItemManager")  -- Send online status
+modem.transmit(101, 101, "ItemManager online")  -- Send online status
 print("Item Dispenser online. Listening on channel 3.")
 
 -- Function to dispense items
