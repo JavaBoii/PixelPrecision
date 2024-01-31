@@ -1,12 +1,37 @@
 -- Computer D
 -- Setup
-local modem = peripheral.wrap("back")
+-- Define the monitor side
+local monitorSide = "monitor_7"  -- Change as needed
+
+-- Wrap the monitor
+local monitor = peripheral.wrap(monitorSide)
+
+local modem = peripheral.wrap("top")
 modem.open(4)  -- Listen on channel 4
 modem.open(101)  -- Listen on channel 101
 modem.transmit(101, 101, "Safeguard online")  -- Send online status
 local COUNT_SIDE = "left"  -- Counting side
 local SHELL_INTERVAL = 1.50  -- Time interval between shells in seconds
-print("Redstone Signal Counter online. Listening on channel 4.")
+monitor.clear()
+monitor.setCursorPos(1, 1)
+
+local function printToMonitor(text)
+    local x, y = monitor.getCursorPos()
+    local width, height = monitor.getSize()
+
+    if y > height then
+        monitor.scroll(1)
+        monitor.setCursorPos(1, height)
+    else
+        monitor.setCursorPos(1, y)
+    end
+
+    monitor.write(text)
+    monitor.setCursorPos(1, y + 1)
+end
+
+
+printToMonitor("Redstone Signal Counter online. Listening on channel 4.")
 
 -- Function to wait for the next shell
 local function waitForNextShell()
@@ -27,18 +52,18 @@ while true do
         local amount = message
         local count = 0
         modem.transmit(101, 101, "RS counting start") -- Notify Monitoring Station
-        print("Starting to count redstone signals for " .. amount .. " items.")
+        printToMonitor("Starting to count redstone signals for " .. amount .. " items.")
 
         -- Count redstone signals
         while count < amount do
             local signalTime = waitForNextShell()
             count = count + 1
-            print("Counted: " .. count)
+            printToMonitor("Counted: " .. count)
             modem.transmit(101, 101, "Counted: " .. count) -- Notify Monitoring Station
         end
 
-        modem.transmit(3, 3, { "order finished", true })  -- Notify Computer B
+        modem.transmit(3, 3, { "order finished", true })  -- Notify Computer C
         modem.transmit(101, 101, "Order finished -> to B") -- Notify Monitoring Station
-        print("Counting complete. Notifying Computer B.")
+        printToMonitor("Counting complete. Notifying Computer B.")
     end
 end
