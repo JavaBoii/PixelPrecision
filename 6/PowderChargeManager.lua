@@ -17,7 +17,7 @@ while true do
         elseif message == 2 then
             redstoneOutput = 5
         elseif message == 1 then
-            redstoneOutput = 13
+            redstoneOutput = 14
         end
 
         if redstoneOutput > 0 then
