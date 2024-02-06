@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.2.0
+
+### Added or Changed
+- Restructure of the project repository to be better organized and more accessible via not only Singleplayer, but also Multiplayer thanks to the new `RoleAssignmentScript.lua` suggested and created by [u/fatboychummy](https://www.reddit.com/user/fatboychummy/).
 ## v1.1.0
 
 ## Added or Changed
