@@ -316,12 +316,13 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 <!-- ACKNOWLEDGMENTS -->
-## Acknowledgments
+## Acknowledgments/Credits
 
 * [Choose an Open Source License](https://choosealicense.com)
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Img Shields](https://shields.io)
-* [Plant Design by my friend NeoMaestro](https://github.com/placeholder)
+* [Plant design by my friend NeoMaestro](https://github.com/placeholder)
+* [Code restructure suggestion by u/fatboychummy](https://www.reddit.com/user/fatboychummy/)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
