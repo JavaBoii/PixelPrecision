@@ -101,9 +101,6 @@ It consists of several key components, including a
 WIP
 
 ---
-Your documentation provides a solid overview of the Automated Powder Charge System. I've made some enhancements for clarity, completeness, and to ensure a thorough understanding for users and developers. Below is the revised and detailed version:
-
----
 
 # Automated Powder Charge System Documentation
 
