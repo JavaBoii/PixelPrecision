@@ -1,29 +1,9 @@
-<!-- Improved compatibility of back to top link: See: https://github.com/othneildrew/Best-README-Template/pull/73 -->
-<a name="readme-top"></a>
-<!--
-*** Thanks for checking out the Best-README-Template. If you have a suggestion
-*** that would make this better, please fork the repo and create a pull request
-*** or simply open an issue with the tag "enhancement".
-*** Don't forget to give the project a star!
-*** Thanks again! Now go create something AMAZING! :D
--->
-
-
-
-<!-- PROJECT SHIELDS -->
-<!--
-*** I'm using markdown "reference style" links for readability.
-*** Reference links are enclosed in brackets [ ] instead of parentheses ( ).
-*** See the bottom of this document for the declaration of the reference variables
-*** for contributors-url, forks-url, etc. This is an optional, concise syntax you may use.
-*** https://www.markdownguide.org/basic-syntax/#reference-style-links
--->
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
+[![Release][release-shield]][release-url]
 [![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 
 
@@ -31,169 +11,300 @@
 <br />
 <div align="center">
   <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+    <img src="https://media.discordapp.net/attachments/1196171831443468309/1204156230126543003/minecraft_title.png" alt="Create PixelPrecision Project Logo" height="250">
   </a>
 
-  <h3 align="center">Best-README-Template</h3>
+  <h3 align="center">Project PixelPrecision</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/othneildrew/Best-README-Template">View Demo</a>
+    A 2-Part Minecraft Project to create automated cannon/artillery and shell production and loading.<br>
+    Including the Programming of an Artillery Computer to hit targets via GPS.
+    <br>
+    <a href="https://github.com/JavaBoii/PixelPrecision/issues">Report Bug</a>
     ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/othneildrew/Best-README-Template/issues">Request Feature</a>
+    <a href="https://github.com/JavaBoii/PixelPrecision/issues">Request Feature</a>
   </p>
 </div>
 
-
-
-<!-- TABLE OF CONTENTS -->
 <details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
+    <summary>Table of contents</summary>
+
+- [Introduction](#introduction)
+- [Documentation Overview](#documentation-overview)
+    - [Part 1: Automated Powder Charge System](#automated-powder-charge-system)
+        - [System Architecture](#system-architecture)
+        - [Component Details](#component-details)
+            - [Monitoring Station]()
+            - [Powder Charge Manager]()
+            - [Safeguard]()
+            - [Item Manager]()
+            - [Order Management System]()
+            - [Sender]()
+        - [Workflow Overview](#workflow-overview)
+    - [Part 2: Automated Artillery Loading and Aiming System](#automated-artillery-loading-and-aiming-system) (WIP)
+- [Getting Started](#getting-started)
+    - [Version 1: Basic Setup](#version-1-basic-setup)
+        - [Step 1: Arranging Computers and Monitors](#step-1-arranging-computers-and-monitors)
+        - [Step 2: Loading Programs](#step-2-loading-programs)
+    - [Version 2: Running on the provided schematic](#version-2-running-on-the-provided-schematic)
+        - [Required Mods](#required-mods)
+        - [Step 1: Placing the Schematic](#step-1-placing-the-schematic)
+        - [Step 2: Preparing Computers](#step-2-preparing-computers)
+        - [Step 3: Initialization](#step-3-initialization)
+- [Roadmap](#roadmap)
+- [License](#license)
+- [Acknowledgments](#acknowledgments)
+
 </details>
 
 
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-There are many great README templates available on GitHub; however, I didn't find one that really suited my needs so I created this enhanced one. I want to create a README template so amazing that it'll be the last one you ever need -- I think this is it.
 
-Here's why:
-* Your time should be focused on creating something amazing. A project that solves a problem and helps others
-* You shouldn't be doing the same tasks over and over like creating a README from scratch
-* You should implement DRY principles to the rest of your life :smile:
+# PixelPrecision Documentation
 
-Of course, no one template will serve all projects since your needs may be different. So I'll be adding more in the near future. You may also suggest changes by forking this repo and creating a pull request or opening an issue. Thanks to all the people have contributed to expanding this template!
+## Introduction
 
-Use the `BLANK_README.md` to get started.
+This project of mine was a way to challenge myself in Minecraft with the Create, Create:Big Cannons and ComputerCraft:Tweaked mod. <br>
+So it started with the idea of creating an automated Artillery with the help of ComputerCraft, which quickly turned into a nightmare.<br>
+So I sat down to code and build a shell delivery System. The Artillery Computer is a WIP, since I have to calculate 
+* the gravity and acceleration of the shots
+* time that each Create speed takes to make the gun do a 360° to get horizontal °/s
+* time that each Create speed takes to make the gun go from 0 to its maximum 60° to get vertical °/s
+
+The project is divided into two distinct but interconnected parts: 
+the Automated Powder Charge System and the Automated Artillery Loading and Aiming System. <br>
+Each part plays a crucial role in the operation, 
+ensuring that the artillery can dynamically deliver shells of varying powers to the target upon request and in the end destroy it with the Computers Assistance.
+
+## Part 1: Automated Powder Charge System
+
+The Automated Powder Charge System is made to dynamically deliver shells with varying levels of power (1-4) to the artillery gun. 
+This system automates the entire process of managing powder charges, from receiving orders to the precise dispensing of the charges. 
+It consists of several key components, including a 
+* simple commandline interface for order input
+* a monitoring station for real-time status updates
+* a safeguard system for ensuring dispensing accuracy
+* an order management system for process coordination 
+* an item manager that controls the physical dispensing mechanism.
+
+**Key Features:**
+
+- **Dynamic Dispensing**: Adjusts the amount and type of powder charge based on user input, allowing for customization of shell power.
+- **Real-Time Monitoring**: Provides live feedback on the system's status, enhancing overview and user intervention.
+- **Accuracy Assurance**: Incorporates counting mechanisms to ensure that the exact amount of powder charge is dispensed, maintaining reliability. ( _known bug: the system misses 0.1% of the outbound shells, causing a freeze in the End_ ) 
+- **Automated Coordination**: Centralizes order processing and coordinates the actions of various components to streamline operations.
+
+## Part 2: Automated Artillery Loading and Aiming System
+
+WIP
+
+---
+Your documentation provides a solid overview of the Automated Powder Charge System. I've made some enhancements for clarity, completeness, and to ensure a thorough understanding for users and developers. Below is the revised and detailed version:
+
+---
+
+# Automated Powder Charge System Documentation
+
+## System Architecture
+
+The Automated Powder Charge System is a sophisticated, modular network designed within Minecraft, powered by the ComputerCraft mod. This system demonstrates the integration of automated processes with real-time monitoring and control, utilizing Lua scripting for communication and operation across multiple components.
+
+The architecture comprises six key components, each responsible for distinct aspects of the system's functionality:
+
+1. **Monitoring Station (`MonitoringStation.lua`)**
+2. **Powder Charge Manager (`PowderChargeManager.lua`)**
+3. **Safeguard (`Safeguard.lua`)**
+4. **Item Manager (`ItemManager.lua`)**
+5. **Order Management System (`OrderManagementSystem.lua`)**
+6. **Sender is the computer/tablet that orders (`sender.lua`)**
+
+<details>
+    <summary><img src="https://icones.pro/wp-content/uploads/2021/06/icone-d-image-orange.png" height="20" alt="image icon"> Isometric View of the Plant</summary>
+    <img src="https://media.discordapp.net/attachments/1196171831443468309/1204241235913613322/Computers.png" alt="Isometric view of Shell production" height="650">
+</details>
+
+---
+
+## Component Details
+<details>
+    <summary><img src="https://icones.pro/wp-content/uploads/2021/06/icone-d-image-orange.png" height="20" alt="image icon"> Isometric X-Ray View for reference</summary>
+    <img src="https://media.discordapp.net/attachments/1196171831443468309/1204240352605896714/Redstone-xray.png" alt="Isometric X-RAY view of Shell production" height="550">
+</details>
+
+
+Shown in image above:
+[1]: [Shell dispenser](#item-manager)
+[2]: [Shell Power controlling](#powder-charge-manager)
+[3]: [Outbound Shell counting](#safeguard-safeguardlua)
+
+
+### Monitoring Station (`MonitoringStation.lua`)
+
+The Monitoring Station acts as the central hub for real-time feedback and system status updates. 
+It displays information on a connected monitor, using color-coded text to differentiate between various messages and statuses.
+
+**Features:**
+- Displays real-time updates from all system components.
+- Utilizes color coding for clear, at-a-glance information dissemination.
+
+### Powder Charge Manager (`PowderChargeManager.lua`)
+
+This component controls the shell power operation, adjusting settings based on the mode (1-4) specified by incoming orders. 
+It ensures the dispensing process aligns with the requested parameters.
+
+**Key Features:**
+- Receives and processes mode commands.
+- Adjusts redstone output for precise control over the dispensing mechanism.
+- Provides status updates to the Monitoring Station.
+
+### Safeguard (`Safeguard.lua`) 
+( ⚠️ _**known bug**: the system misses 0.1% of the outbound shells, causing a freeze in the End_ ⚠️ )<br>
+The Safeguard ensures the accuracy of the dispensing process by counting each dispensed item. 
+It monitors redstone signals and communicates the count to the Monitoring Station, verifying that the quantity dispensed matches the order.
+
+**Features:**
+- Monitors and counts dispensed items for accuracy.
+- Communicates count and status updates in real-time.
+
+### Item Manager (`ItemManager.lua`)
+
+Directly responsible for the physical dispensing of items, the Item Manager adjusts its operations based on the specifics of received orders, 
+ensuring the correct quantity and mode of powder charges are dispensed.
+
+**Features:**
+- Controls the physical dispensing mechanism.
+- Adjusts operations dynamically based on order details.
+
+### Order Management System (`OrderManagementSystem.lua`)
+
+As the coordinator of the dispensing process, the Order Management System processes incoming orders, 
+communicates with the Item Manager and Safeguard, and maintains the system's operational flow.
+
+**Features:**
+- Processes and coordinates the execution of orders.
+- Ensures communication and synchronization between system components.
+
+### Sender (`sender.lua`)
+
+The Sender provides the user interface for the system, allowing for the input of order details such as mode and quantity. 
+It validates inputs and transmits the order to the system for processing.
+
+**Features:**
+- Captures and validates user input.
+- Initiates the order process by transmitting details to the system.
+
+## Workflow Overview
+
+The Automated Powder Charge System operates through a coordinated workflow:
+
+1. **Order Placement**: The user inputs order details into the Sender, which transmits the validated order to the system.
+2. **Order Coordination**: The Order Management System receives the order, initiating the dispensing process with the Item Manager.
+3. **Monitoring**: The Monitoring Station displays real-time updates, providing visibility into the system's operations.
+4. **Verification**: Safeguard verifying accuracy.
+5. **Completion**: Upon order fulfillment, the system signals completion, readying itself for the next order.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-
-
-### Built With
-
-This section should list any major frameworks/libraries used to bootstrap your project. Leave any add-ons/plugins for the acknowledgements section. Here are a few examples.
-
-* [![Next][Next.js]][Next-url]
-* [![React][React.js]][React-url]
-* [![Vue][Vue.js]][Vue-url]
-* [![Angular][Angular.io]][Angular-url]
-* [![Svelte][Svelte.dev]][Svelte-url]
-* [![Laravel][Laravel.com]][Laravel-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
-* [![JQuery][JQuery.com]][JQuery-url]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+---
 
 
 <!-- GETTING STARTED -->
-## Getting Started
+# Getting Started with the Automated Powder Charge System
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+## Version 1: Basic Setup
 
-### Prerequisites
+### Step 1: Arranging Computers and Monitors
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+1. **Place Computers**: Arrange five computers in a line on your Minecraft world. <br>⚠️ **Ensure there is one block space to the left of the third computer and one block space to the right of the fourth computer, as these spaces are necessary for the system's operation.** ⚠️<br>The second computer will output its redstone signal to the left.
 
-### Installation
+2. **Connect to Wired Network**: Attach wired modems to the bottom of each computer. Connect these modems with network cables to form a single wired network. This network allows the computers to communicate with each other.
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
+3. **Attach Monitors**: Connect monitors to the network. Each computer, except the first one (Monitoring Station), should have its monitor connected to ensure that output can be displayed correctly. The first computer will directly interact with its attached monitor without going through the network.
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+4. **Attach Wireless Modems**: Place wireless modems on top of each computer, except for the first one. This setup enables wireless communication for sending and receiving data across the system.
+
+<details>
+    <summary><img src="https://icones.pro/wp-content/uploads/2021/06/icone-d-image-orange.png" height="20" alt="image icon"> Computer Setup Overview</summary>
+    <img src="https://media.discordapp.net/attachments/1196171831443468309/1204278791673872405/Link-Structure.png" alt="Computer Setup Overview" height="350">
+</details>
+
+### Step 2: Loading Programs
+
+1. **Load Lua Scripts**: On each computer, load the respective Lua script as follows:
+    - Monitoring Station: `MonitoringStation.lua`
+    - Powder Charge Manager: `PowderChargeManager.lua`
+    - Safeguard: `Safeguard.lua`
+    - Item Manager: `ItemManager.lua`
+    - Order Management System: `OrderManagementSystem.lua`
+    - Sender: `sender.lua` (This can be loaded on a computer or a tablet that acts as the sender.)
+
+2. **Initialization Order**: After loading the scripts, start the computers in the following order to ensure proper system initialization:
+    - Monitoring Station
+    - Powder Charge Manager
+    - Safeguard
+    - Item Manager
+    - Order Management System
+
+By following these steps, your Automated Powder Charge System should now be set up and ready for operation.
+
+## Version 2: Running on the provided schematic
+
+### Required Mods Minecraft 1.20.1
+
+To run the system on a predefined schematic, ensure you have the following mods installed in your Minecraft instance:
+
+- Create
+- Create: Big Cannons
+- Create: Connected
+- Create: Design n' Decor
+- Create: Misc & Things
+- CC: Tweaked
+- Tiny Gates
+
+### Step 1: Placing the Schematic
+
+1. **Install Schematic**: Place the provided schematic in your world. This schematic is designed to integrate with the Automated Powder Charge System, providing a physical structure for the system's operation.
+
+2. **Check for Computers**: You'll notice that the computers in the schematic do not contain the necessary code for operation.
+
+### Step 2: Preparing Computers
+
+1. **Create Dummy Files**: On each computer within the schematic, open the Lua interactive shell by typing `lua` and create a dummy file by executing:
+   ```lua
+   edit test
    ```
-3. Install NPM packages
-   ```sh
-   npm install
+   This step ensures that each computer is initialized and ready to receive the actual program files.
+
+2. **Locate Computer Directories**: Navigate to the `computercraft` directory in your world's save folder, typically found at:
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+   C:\Users\[User]\curseforge\minecraft\Instances\[instance]\saves\[World name]\computercraft\computer
    ```
+   Here, you will find folders corresponding to each computer placed in the world.
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+3. **Transfer Lua Scripts**: Match each computer's ID with its role in the system (as outlined in Part 1) and drag and drop the correct Lua script file into the corresponding computer's folder.
 
+### Step 3: Initialization
 
+Follow the same order of initialization as described in Part 1 to start each component of the system. This ensures that all components are correctly synchronized and the system is operational.
 
-<!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+By completing these steps, your Automated Powder Charge System will be fully integrated with the provided schematic, leveraging the advanced capabilities of the required mods to enhance the system's functionality and aesthetics.
 
 
 <!-- ROADMAP -->
 ## Roadmap
 
-- [x] Add Changelog
-- [x] Add back to top links
-- [ ] Add Additional Templates w/ Examples
-- [ ] Add "components" document to easily copy & paste sections of the readme
-- [ ] Multi-language Support
-    - [ ] Chinese
-    - [ ] Spanish
+- [x] Part 1: Automated Powder Charge System
+  - [x] Add documentation
+  - [x] Add schematics
+  - [ ] Fix counting Issue
+- [ ] Part 2: Artillery Computer
+  - [ ] Add documentation
+  - [ ] Add schematics
 
-See the [open issues](https://github.com/othneildrew/Best-README-Template/issues) for a full list of proposed features (and known issues).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTRIBUTING -->
-## Contributing
-
-Contributions are what make the open source community such an amazing place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
-
-If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
-Don't forget to give the project a star! Thanks again!
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+See the [open issues](https://github.com/JavaBoii/PixelPrecision/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -202,69 +313,34 @@ Don't forget to give the project a star! Thanks again!
 <!-- LICENSE -->
 ## License
 
-Distributed under the MIT License. See `LICENSE.txt` for more information.
+Distributed under the MIT License. See `LICENSE` for more information.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-<!-- CONTACT -->
-## Contact
-
-Your Name - [@your_twitter](https://twitter.com/your_username) - email@example.com
-
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-Use this space to list resources you find helpful and would like to give credit to. I've included a few of my favorites to kick things off!
-
 * [Choose an Open Source License](https://choosealicense.com)
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
-* [Malven's Flexbox Cheatsheet](https://flexbox.malven.co/)
-* [Malven's Grid Cheatsheet](https://grid.malven.co/)
 * [Img Shields](https://shields.io)
-* [GitHub Pages](https://pages.github.com)
-* [Font Awesome](https://fontawesome.com)
-* [React Icons](https://react-icons.github.io/react-icons/search)
+* [Plant Design by my friend NeoMaestro](https://github.com/jheerink)
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/othneildrew/Best-README-Template.svg?style=for-the-badge
-[contributors-url]: https://github.com/othneildrew/Best-README-Template/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/othneildrew/Best-README-Template.svg?style=for-the-badge
-[forks-url]: https://github.com/othneildrew/Best-README-Template/network/members
-[stars-shield]: https://img.shields.io/github/stars/othneildrew/Best-README-Template.svg?style=for-the-badge
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[contributors-shield]: https://img.shields.io/github/contributors/JavaBoii/PixelPrecision?style=for-the-badge
+[contributors-url]: https://github.com/JavaBoii/PixelPrecision/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/JavaBoii/PixelPrecision?style=for-the-badge
+[forks-url]: https://github.com/JavaBoii/PixelPrecision/network/members
+[stars-shield]: https://img.shields.io/github/stars/JavaBoii/PixelPrecision?style=for-the-badge
+[stars-url]: https://github.com/JavaBoii/PixelPrecision/stargazers
+[issues-shield]: https://img.shields.io/github/issues/JavaBoii/PixelPrecision?style=for-the-badge
 [issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-[license-shield]: https://img.shields.io/github/license/othneildrew/Best-README-Template.svg?style=for-the-badge
-[license-url]: https://github.com/othneildrew/Best-README-Template/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/othneildrew
-[product-screenshot]: images/screenshot.png
-[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
-[Next-url]: https://nextjs.org/
-[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
-[React-url]: https://reactjs.org/
-[Vue.js]: https://img.shields.io/badge/Vue.js-35495E?style=for-the-badge&logo=vuedotjs&logoColor=4FC08D
-[Vue-url]: https://vuejs.org/
-[Angular.io]: https://img.shields.io/badge/Angular-DD0031?style=for-the-badge&logo=angular&logoColor=white
-[Angular-url]: https://angular.io/
-[Svelte.dev]: https://img.shields.io/badge/Svelte-4A4A55?style=for-the-badge&logo=svelte&logoColor=FF3E00
-[Svelte-url]: https://svelte.dev/
-[Laravel.com]: https://img.shields.io/badge/Laravel-FF2D20?style=for-the-badge&logo=laravel&logoColor=white
-[Laravel-url]: https://laravel.com
-[Bootstrap.com]: https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
-[Bootstrap-url]: https://getbootstrap.com
-[JQuery.com]: https://img.shields.io/badge/jQuery-0769AD?style=for-the-badge&logo=jquery&logoColor=white
-[JQuery-url]: https://jquery.com 
+[release-shield]: https://img.shields.io/github/v/release/JavaBoii/PixelPrecision?style=for-the-badge
+[release-url]: https://github.com/JavaBoii/PixelPrecision/releases
+[license-shield]: https://img.shields.io/github/license/JavaBoii/PixelPrecision?style=for-the-badge
+[license-url]: https://github.com/JavaBoii/PixelPrecision/blob/master/LICENSE

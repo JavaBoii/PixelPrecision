@@ -4,30 +4,35 @@
 local monitorSide = "monitor_7"  -- Change as needed
 
 -- Wrap the monitor
-local monitor = peripheral.wrap(monitorSide)
+local MONITOR = peripheral.wrap(monitorSide)
 
-local modem = peripheral.wrap("top")
-modem.open(4)  -- Listen on channel 4
-modem.open(101)  -- Listen on channel 101
-modem.transmit(101, 101, "Safeguard online")  -- Send online status
+local MODEM = peripheral.wrap("top")
+local CHANNELS = { 4, 101 }
 local COUNT_SIDE = "left"  -- Counting side
 local SHELL_INTERVAL = 1.50  -- Time interval between shells in seconds
-monitor.clear()
-monitor.setCursorPos(1, 1)
+
+for i, channel in ipairs(CHANNELS) do
+    MODEM.open(channel)
+end
+
+MODEM.transmit(101, 101, "Safeguard online")  -- Send online status
+
+MONITOR.clear()
+MONITOR.setCursorPos(1, 1)
 
 local function printToMonitor(text)
-    local x, y = monitor.getCursorPos()
-    local width, height = monitor.getSize()
+    local x, y = MONITOR.getCursorPos()
+    local width, height = MONITOR.getSize()
 
     if y > height then
-        monitor.scroll(1)
-        monitor.setCursorPos(1, height)
+        MONITOR.scroll(1)
+        MONITOR.setCursorPos(1, height)
     else
-        monitor.setCursorPos(1, y)
+        MONITOR.setCursorPos(1, y)
     end
 
-    monitor.write(text)
-    monitor.setCursorPos(1, y + 1)
+    MONITOR.write(text)
+    MONITOR.setCursorPos(1, y + 1)
 end
 
 
@@ -51,7 +56,7 @@ while true do
     if senderChannel == 4 and type(message) == "number" then
         local amount = message
         local count = 0
-        modem.transmit(101, 101, "RS counting start") -- Notify Monitoring Station
+        MODEM.transmit(101, 101, "RS counting start") -- Notify Monitoring Station
         printToMonitor("Starting to count redstone signals for " .. amount .. " items.")
 
         -- Count redstone signals
@@ -59,11 +64,11 @@ while true do
             local signalTime = waitForNextShell()
             count = count + 1
             printToMonitor("Counted: " .. count)
-            modem.transmit(101, 101, "Counted: " .. count) -- Notify Monitoring Station
+            MODEM.transmit(101, 101, "Counted: " .. count) -- Notify Monitoring Station
         end
 
-        modem.transmit(3, 3, { "order finished", true })  -- Notify Computer C
-        modem.transmit(101, 101, "Order finished -> to B") -- Notify Monitoring Station
+        MODEM.transmit(3, 3, { "order finished", true })  -- Notify Computer C
+        MODEM.transmit(101, 101, "Order finished -> to B") -- Notify Monitoring Station
         printToMonitor("Counting complete. Notifying Computer B.")
     end
 end
