@@ -324,7 +324,7 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * [Choose an Open Source License](https://choosealicense.com)
 * [GitHub Emoji Cheat Sheet](https://www.webpagefx.com/tools/emoji-cheat-sheet)
 * [Img Shields](https://shields.io)
-* [Plant Design by my friend NeoMaestro](https://github.com/jheerink)
+* [Plant Design by my friend NeoMaestro](https://github.com/placeholder)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
