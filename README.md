@@ -202,6 +202,7 @@ The Automated Powder Charge System operates through a coordinated workflow:
 5. **Completion**: Upon order fulfillment, the system signals completion, readying itself for the next order.
 
 </details>
+
 ---
 
 <!-- GETTING STARTED -->
@@ -226,10 +227,10 @@ The Automated Powder Charge System operates through a coordinated workflow:
 
 ### Step 2: Loading Programs
 
-1. **Load Lua Scripts**: On each computer, load the respective Lua script that is beeing desplayed on your screen by using the following command. <br>
-```shell
-wget https://raw.githubusercontent.com/JavaBoii/PixelPrecision/master/src/setup/RoleAssignmentScript.lua
-```
+1. **Load Lua Scripts**: On each computer, load the respective Lua script that is being displayed on your screen by using the following command. <br>
+    ```shell
+    wget https://raw.githubusercontent.com/JavaBoii/PixelPrecision/master/src/setup/RoleAssignmentScript.lua
+    ```
 2. **Initialization Order**: After loading the scripts, start the computers in the following order to ensure proper
    system initialization:
     - Monitoring Station
