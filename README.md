@@ -255,35 +255,6 @@ To run the system on a predefined schematic, ensure you have the following mods 
 - CC: Tweaked
 - Tiny Gates
 
-### Step 1: Placing the Schematic
-
-1. **Install Schematic**: Place the provided schematic in your world. This schematic is designed to integrate with the Automated Powder Charge System, providing a physical structure for the system's operation.
-
-2. **Check for Computers**: You'll notice that the computers in the schematic do not contain the necessary code for operation.
-
-### Step 2: Preparing Computers
-
-1. **Create Dummy Files**: On each computer within the schematic, open the Lua interactive shell by typing `lua` and create a dummy file by executing:
-   ```shell
-   edit test
-   ```
-   This step ensures that each computer is initialized and ready to receive the actual program files.
-
-2. **Locate Computer Directories**: Navigate to the `computercraft` directory in your world's save folder, typically found at:
-   ```shell
-   C:\Users\[User]\curseforge\minecraft\Instances\[instance]\saves\[World name]\computercraft\computer
-   ```
-   Here, you will find folders corresponding to each computer placed in the world.
-
-3. **Transfer Lua Scripts**: Match each computer's ID with its role in the system (as outlined in Part 1) and drag and drop the correct Lua script file into the corresponding computer's folder.
-
-### Step 3: Initialization
-
-Follow the same order of initialization as described in Part 1 to start each component of the system. This ensures that all components are correctly synchronized and the system is operational.
-
-By completing these steps, your Automated Powder Charge System will be fully integrated with the provided schematic, leveraging the advanced capabilities of the required mods to enhance the system's functionality and aesthetics.
-
-
 <!-- ROADMAP -->
 ## Roadmap
 
