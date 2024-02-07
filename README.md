@@ -3,7 +3,6 @@
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
 [![Release][release-shield]][release-url]
-[![Downloads][download-shield]][download]
 [![MIT License][license-shield]][license-url]
 
 
@@ -15,7 +14,7 @@
     <img src="https://media.discordapp.net/attachments/1196171831443468309/1204156230126543003/minecraft_title.png" alt="Create PixelPrecision Project Logo" height="250">
   </a>
 
-<h3 align="center">Project PixelPrecision</h3>
+  <h3 align="center">Project PixelPrecision</h3>
 
   <p align="center">
     A 2-Part Minecraft Project to create automated cannon/artillery and shell production and loading.<br>
@@ -58,50 +57,44 @@
 
 </details>
 
+
+
+
+
+
 # PixelPrecision Documentation
 
 ## Introduction
 
-This project of mine was a way to challenge myself in Minecraft with the Create, Create:Big Cannons and ComputerCraft:
-Tweaked mod. <br>
-So it started with the idea of creating an automated Artillery with the help of ComputerCraft, which quickly turned into
-a nightmare.<br>
-So I sat down to code and build a shell delivery System. The Artillery Computer is a WIP, since I have to calculate
-
+This project of mine was a way to challenge myself in Minecraft with the Create, Create:Big Cannons and ComputerCraft:Tweaked mod. <br>
+So it started with the idea of creating an automated Artillery with the help of ComputerCraft, which quickly turned into a nightmare.<br>
+So I sat down to code and build a shell delivery System. The Artillery Computer is a WIP, since I have to calculate 
 * the gravity and acceleration of the shots
 * time that each Create speed takes to make the gun do a 360° to get horizontal °/s
 * time that each Create speed takes to make the gun go from 0 to its maximum 60° to get vertical °/s
 
-The project is divided into two distinct but interconnected parts:
+The project is divided into two distinct but interconnected parts: 
 the Automated Powder Charge System and the Automated Artillery Loading and Aiming System. <br>
-Each part plays a crucial role in the operation,
-ensuring that the artillery can dynamically deliver shells of varying powers to the target upon request and in the end
-destroy it with the Computers Assistance.
+Each part plays a crucial role in the operation, 
+ensuring that the artillery can dynamically deliver shells of varying powers to the target upon request and in the end destroy it with the Computers Assistance.
 
 ## Part 1: Automated Powder Charge System
 
-The Automated Powder Charge System is made to dynamically deliver shells with varying levels of power (1-4) to the
-artillery gun.
-This system automates the entire process of managing powder charges, from receiving orders to the precise dispensing of
-the charges.
-It consists of several key components, including a
-
+The Automated Powder Charge System is made to dynamically deliver shells with varying levels of power (1-4) to the artillery gun. 
+This system automates the entire process of managing powder charges, from receiving orders to the precise dispensing of the charges. 
+It consists of several key components, including a 
 * simple commandline interface for order input
 * a monitoring station for real-time status updates
 * a safeguard system for ensuring dispensing accuracy
-* an order management system for process coordination
+* an order management system for process coordination 
 * an item manager that controls the physical dispensing mechanism.
 
 **Key Features:**
 
-- **Dynamic Dispensing**: Adjusts the amount and type of powder charge based on user input, allowing for customization
-  of shell power.
+- **Dynamic Dispensing**: Adjusts the amount and type of powder charge based on user input, allowing for customization of shell power.
 - **Real-Time Monitoring**: Provides live feedback on the system's status, enhancing overview and user intervention.
-- **Accuracy Assurance**: Incorporates counting mechanisms to ensure that the exact amount of powder charge is
-  dispensed, maintaining reliability. ( _known bug: the system misses 0.1% of the outbound shells, causing a freeze in
-  the End_ )
-- **Automated Coordination**: Centralizes order processing and coordinates the actions of various components to
-  streamline operations.
+- **Accuracy Assurance**: Incorporates counting mechanisms to ensure that the exact amount of powder charge is dispensed, maintaining reliability. ( _known bug: the system misses 0.1% of the outbound shells, causing a freeze in the End_ ) 
+- **Automated Coordination**: Centralizes order processing and coordinates the actions of various components to streamline operations.
 
 ## Part 2: Automated Artillery Loading and Aiming System
 
@@ -113,9 +106,7 @@ WIP
 
 ## System Architecture
 
-The Automated Powder Charge System is a sophisticated, modular network designed within Minecraft, powered by the
-ComputerCraft mod. This system demonstrates the integration of automated processes with real-time monitoring and
-control, utilizing Lua scripting for communication and operation across multiple components.
+The Automated Powder Charge System is a sophisticated, modular network designed within Minecraft, powered by the ComputerCraft mod. This system demonstrates the integration of automated processes with real-time monitoring and control, utilizing Lua scripting for communication and operation across multiple components.
 
 The architecture comprises six key components, each responsible for distinct aspects of the system's functionality:
 
@@ -134,7 +125,6 @@ The architecture comprises six key components, each responsible for distinct asp
 ---
 
 ## Component Details
-
 <details>
     <summary><img src="https://icones.pro/wp-content/uploads/2021/06/icone-d-image-orange.png" height="20" alt="image icon"> Isometric X-Ray View for reference</summary>
     <img src="https://media.discordapp.net/attachments/1196171831443468309/1204240352605896714/Redstone-xray.png" alt="Isometric X-RAY view of Shell production" height="550">
@@ -146,70 +136,59 @@ Shown in image above:
 [2]: [Shell Power controlling](#powder-charge-manager)
 [3]: [Outbound Shell counting](#safeguard-safeguardlua)
 
+
 ### Monitoring Station (`MonitoringStation.lua`)
 
-The Monitoring Station acts as the central hub for real-time feedback and system status updates.
-It displays information on a connected monitor, using color-coded text to differentiate between various messages and
-statuses.
+The Monitoring Station acts as the central hub for real-time feedback and system status updates. 
+It displays information on a connected monitor, using color-coded text to differentiate between various messages and statuses.
 
 **Features:**
-
 - Displays real-time updates from all system components.
 - Utilizes color coding for clear, at-a-glance information dissemination.
 
 ### Powder Charge Manager (`PowderChargeManager.lua`)
 
-This component controls the shell power operation, adjusting settings based on the mode (1-4) specified by incoming
-orders.
+This component controls the shell power operation, adjusting settings based on the mode (1-4) specified by incoming orders. 
 It ensures the dispensing process aligns with the requested parameters.
 
 **Key Features:**
-
 - Receives and processes mode commands.
 - Adjusts redstone output for precise control over the dispensing mechanism.
 - Provides status updates to the Monitoring Station.
 
-### Safeguard (`Safeguard.lua`)
-
+### Safeguard (`Safeguard.lua`) 
 ( ⚠️ _**known bug**: the system misses 0.1% of the outbound shells, causing a freeze in the End_ ⚠️ )<br>
-The Safeguard ensures the accuracy of the dispensing process by counting each dispensed item.
-It monitors redstone signals and communicates the count to the Monitoring Station, verifying that the quantity dispensed
-matches the order.
+The Safeguard ensures the accuracy of the dispensing process by counting each dispensed item. 
+It monitors redstone signals and communicates the count to the Monitoring Station, verifying that the quantity dispensed matches the order.
 
 **Features:**
-
 - Monitors and counts dispensed items for accuracy.
 - Communicates count and status updates in real-time.
 
 ### Item Manager (`ItemManager.lua`)
 
-Directly responsible for the physical dispensing of items, the Item Manager adjusts its operations based on the
-specifics of received orders,
+Directly responsible for the physical dispensing of items, the Item Manager adjusts its operations based on the specifics of received orders, 
 ensuring the correct quantity and mode of powder charges are dispensed.
 
 **Features:**
-
 - Controls the physical dispensing mechanism.
 - Adjusts operations dynamically based on order details.
 
 ### Order Management System (`OrderManagementSystem.lua`)
 
-As the coordinator of the dispensing process, the Order Management System processes incoming orders,
+As the coordinator of the dispensing process, the Order Management System processes incoming orders, 
 communicates with the Item Manager and Safeguard, and maintains the system's operational flow.
 
 **Features:**
-
 - Processes and coordinates the execution of orders.
 - Ensures communication and synchronization between system components.
 
 ### Sender (`sender.lua`)
 
-The Sender provides the user interface for the system, allowing for the input of order details such as mode and
-quantity.
+The Sender provides the user interface for the system, allowing for the input of order details such as mode and quantity. 
 It validates inputs and transmits the order to the system for processing.
 
 **Features:**
-
 - Captures and validates user input.
 - Initiates the order process by transmitting details to the system.
 
@@ -217,13 +196,12 @@ It validates inputs and transmits the order to the system for processing.
 
 The Automated Powder Charge System operates through a coordinated workflow:
 
-1. **Order Placement**: The user inputs order details into the Sender, which transmits the validated order to the
-   system.
-2. **Order Coordination**: The Order Management System receives the order, initiating the dispensing process with the
-   Item Manager.
+1. **Order Placement**: The user inputs order details into the Sender, which transmits the validated order to the system.
+2. **Order Coordination**: The Order Management System receives the order, initiating the dispensing process with the Item Manager.
 3. **Monitoring**: The Monitoring Station displays real-time updates, providing visibility into the system's operations.
 4. **Verification**: Safeguard verifying accuracy.
 5. **Completion**: Upon order fulfillment, the system signals completion, readying itself for the next order.
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -231,26 +209,19 @@ The Automated Powder Charge System operates through a coordinated workflow:
 
 
 <!-- GETTING STARTED -->
-
 # Getting Started with the Automated Powder Charge System
 
 ## Version 1: Basic Setup
 
 ### Step 1: Arranging Computers and Monitors
 
-1. **Place Computers**: Arrange five computers in a line on your Minecraft world. <br>⚠️ **Ensure there is one block
-   space to the left of the third computer and one block space to the right of the fourth computer, as these spaces are
-   necessary for the system's operation.** ⚠️<br>The second computer will output its redstone signal to the left.
+1. **Place Computers**: Arrange five computers in a line on your Minecraft world. <br>⚠️ **Ensure there is one block space to the left of the third computer and one block space to the right of the fourth computer, as these spaces are necessary for the system's operation.** ⚠️<br>The second computer will output its redstone signal to the left.
 
-2. **Connect to Wired Network**: Attach wired modems to the bottom of each computer. Connect these modems with network
-   cables to form a single wired network. This network allows the computers to communicate with each other.
+2. **Connect to Wired Network**: Attach wired modems to the bottom of each computer. Connect these modems with network cables to form a single wired network. This network allows the computers to communicate with each other.
 
-3. **Attach Monitors**: Connect monitors to the network. Each computer, except the first one (Monitoring Station),
-   should have its monitor connected to ensure that output can be displayed correctly. The first computer will directly
-   interact with its attached monitor without going through the network.
+3. **Attach Monitors**: Connect monitors to the network. Each computer, except the first one (Monitoring Station), should have its monitor connected to ensure that output can be displayed correctly. The first computer will directly interact with its attached monitor without going through the network.
 
-4. **Attach Wireless Modems**: Place wireless modems on top of each computer, except for the first one. This setup
-   enables wireless communication for sending and receiving data across the system.
+4. **Attach Wireless Modems**: Place wireless modems on top of each computer, except for the first one. This setup enables wireless communication for sending and receiving data across the system.
 
 <details>
     <summary><img src="https://icones.pro/wp-content/uploads/2021/06/icone-d-image-orange.png" height="20" alt="image icon"> Computer Setup Overview</summary>
@@ -267,8 +238,7 @@ The Automated Powder Charge System operates through a coordinated workflow:
     - Order Management System: `OrderManagementSystem.lua`
     - Sender: `sender.lua` (This can be loaded on a computer or a tablet that acts as the sender.)
 
-2. **Initialization Order**: After loading the scripts, start the computers in the following order to ensure proper
-   system initialization:
+2. **Initialization Order**: After loading the scripts, start the computers in the following order to ensure proper system initialization:
     - Monitoring Station
     - Powder Charge Manager
     - Safeguard
@@ -293,61 +263,51 @@ To run the system on a predefined schematic, ensure you have the following mods 
 
 ### Step 1: Placing the Schematic
 
-1. **Install Schematic**: Place the provided schematic in your world. This schematic is designed to integrate with the
-   Automated Powder Charge System, providing a physical structure for the system's operation.
+1. **Install Schematic**: Place the provided schematic in your world. This schematic is designed to integrate with the Automated Powder Charge System, providing a physical structure for the system's operation.
 
-2. **Check for Computers**: You'll notice that the computers in the schematic do not contain the necessary code for
-   operation.
+2. **Check for Computers**: You'll notice that the computers in the schematic do not contain the necessary code for operation.
 
 ### Step 2: Preparing Computers
 
-1. **Create Dummy Files**: On each computer within the schematic, open the Lua interactive shell by typing `lua` and
-   create a dummy file by executing:
+1. **Create Dummy Files**: On each computer within the schematic, open the Lua interactive shell by typing `lua` and create a dummy file by executing:
    ```lua
    edit test
    ```
    This step ensures that each computer is initialized and ready to receive the actual program files.
 
-2. **Locate Computer Directories**: Navigate to the `computercraft` directory in your world's save folder, typically
-   found at:
+2. **Locate Computer Directories**: Navigate to the `computercraft` directory in your world's save folder, typically found at:
    ```
    C:\Users\[User]\curseforge\minecraft\Instances\[instance]\saves\[World name]\computercraft\computer
    ```
    Here, you will find folders corresponding to each computer placed in the world.
 
-3. **Transfer Lua Scripts**: Match each computer's ID with its role in the system (as outlined in Part 1) and drag and
-   drop the correct Lua script file into the corresponding computer's folder.
+3. **Transfer Lua Scripts**: Match each computer's ID with its role in the system (as outlined in Part 1) and drag and drop the correct Lua script file into the corresponding computer's folder.
 
 ### Step 3: Initialization
 
-Follow the same order of initialization as described in Part 1 to start each component of the system. This ensures that
-all components are correctly synchronized and the system is operational.
+Follow the same order of initialization as described in Part 1 to start each component of the system. This ensures that all components are correctly synchronized and the system is operational.
 
-By completing these steps, your Automated Powder Charge System will be fully integrated with the provided schematic,
-leveraging the advanced capabilities of the required mods to enhance the system's functionality and aesthetics.
+By completing these steps, your Automated Powder Charge System will be fully integrated with the provided schematic, leveraging the advanced capabilities of the required mods to enhance the system's functionality and aesthetics.
 
 
 <!-- ROADMAP -->
-
 ## Roadmap
 
 - [x] Part 1: Automated Powder Charge System
-    - [x] Add documentation
-    - [x] Add schematics
-    - [ ] Fix counting Issue
+  - [x] Add documentation
+  - [x] Add schematics
+  - [ ] Fix counting Issue
 - [ ] Part 2: Artillery Computer
-    - [ ] Add documentation
-    - [ ] Add schematics
+  - [ ] Add documentation
+  - [ ] Add schematics
 
-See the [open issues](https://github.com/JavaBoii/PixelPrecision/issues) for a full list of proposed features (and known
-issues).
+See the [open issues](https://github.com/JavaBoii/PixelPrecision/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- LICENSE -->
-
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
@@ -356,7 +316,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 
 <!-- ACKNOWLEDGMENTS -->
-
 ## Acknowledgments/Credits
 
 * [Choose an Open Source License](https://choosealicense.com)
@@ -365,36 +324,21 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * [Plant design by my friend NeoMaestro](https://github.com/placeholder)
 * [Code restructure suggestion by u/fatboychummy](https://www.reddit.com/user/fatboychummy/)
 
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-
 [contributors-shield]: https://img.shields.io/github/contributors/JavaBoii/PixelPrecision?style=for-the-badge
-
 [contributors-url]: https://github.com/JavaBoii/PixelPrecision/graphs/contributors
-
 [forks-shield]: https://img.shields.io/github/forks/JavaBoii/PixelPrecision?style=for-the-badge
-
 [forks-url]: https://github.com/JavaBoii/PixelPrecision/network/members
-
 [stars-shield]: https://img.shields.io/github/stars/JavaBoii/PixelPrecision?style=for-the-badge
-
 [stars-url]: https://github.com/JavaBoii/PixelPrecision/stargazers
-
 [issues-shield]: https://img.shields.io/github/issues/JavaBoii/PixelPrecision?style=for-the-badge
-
 [issues-url]: https://github.com/othneildrew/Best-README-Template/issues
-
 [release-shield]: https://img.shields.io/github/v/release/JavaBoii/PixelPrecision?style=for-the-badge
-
 [release-url]: https://github.com/JavaBoii/PixelPrecision/releases
-
-[download-shield]: https://img.shields.io/github/downloads/JavaBoii/PixelPrecision%20/total?style=for-the-badge
-
-[download]: https://github.com/JavaBoii/PixelPrecision/downloads
-
 [license-shield]: https://img.shields.io/github/license/JavaBoii/PixelPrecision?style=for-the-badge
-
 [license-url]: https://github.com/JavaBoii/PixelPrecision/blob/master/LICENSE
