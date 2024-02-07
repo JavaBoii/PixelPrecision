@@ -58,11 +58,10 @@
 </details>
 
 
-
-
-
-
 # PixelPrecision Documentation
+
+<details>
+    <summary>Introduction, About section and module functionality</summary>
 
 ## Introduction
 
@@ -202,11 +201,8 @@ The Automated Powder Charge System operates through a coordinated workflow:
 4. **Verification**: Safeguard verifying accuracy.
 5. **Completion**: Upon order fulfillment, the system signals completion, readying itself for the next order.
 
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
+</details>
 ---
-
 
 <!-- GETTING STARTED -->
 # Getting Started with the Automated Powder Charge System
@@ -230,15 +226,12 @@ The Automated Powder Charge System operates through a coordinated workflow:
 
 ### Step 2: Loading Programs
 
-1. **Load Lua Scripts**: On each computer, load the respective Lua script as follows:
-    - Monitoring Station: `MonitoringStation.lua`
-    - Powder Charge Manager: `PowderChargeManager.lua`
-    - Safeguard: `Safeguard.lua`
-    - Item Manager: `ItemManager.lua`
-    - Order Management System: `OrderManagementSystem.lua`
-    - Sender: `sender.lua` (This can be loaded on a computer or a tablet that acts as the sender.)
-
-2. **Initialization Order**: After loading the scripts, start the computers in the following order to ensure proper system initialization:
+1. **Load Lua Scripts**: On each computer, load the respective Lua script that is beeing desplayed on your screen by using the following command. <br>
+```shell
+wget https://raw.githubusercontent.com/JavaBoii/PixelPrecision/master/src/setup/RoleAssignmentScript.lua
+```
+2. **Initialization Order**: After loading the scripts, start the computers in the following order to ensure proper
+   system initialization:
     - Monitoring Station
     - Powder Charge Manager
     - Safeguard
@@ -270,13 +263,13 @@ To run the system on a predefined schematic, ensure you have the following mods 
 ### Step 2: Preparing Computers
 
 1. **Create Dummy Files**: On each computer within the schematic, open the Lua interactive shell by typing `lua` and create a dummy file by executing:
-   ```lua
+   ```shell
    edit test
    ```
    This step ensures that each computer is initialized and ready to receive the actual program files.
 
 2. **Locate Computer Directories**: Navigate to the `computercraft` directory in your world's save folder, typically found at:
-   ```
+   ```shell
    C:\Users\[User]\curseforge\minecraft\Instances\[instance]\saves\[World name]\computercraft\computer
    ```
    Here, you will find folders corresponding to each computer placed in the world.
@@ -303,16 +296,11 @@ By completing these steps, your Automated Powder Charge System will be fully int
 
 See the [open issues](https://github.com/JavaBoii/PixelPrecision/issues) for a full list of proposed features (and known issues).
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- LICENSE -->
 ## License
 
 Distributed under the MIT License. See `LICENSE` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- ACKNOWLEDGMENTS -->
@@ -323,9 +311,6 @@ Distributed under the MIT License. See `LICENSE` for more information.
 * [Img Shields](https://shields.io)
 * [Plant design by my friend NeoMaestro](https://github.com/placeholder)
 * [Code restructure suggestion by u/fatboychummy](https://www.reddit.com/user/fatboychummy/)
-
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
