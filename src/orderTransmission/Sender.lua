@@ -58,3 +58,5 @@ while true do
     setColor(colors.yellow)
     read()
 end
+
+--TODO: Add the functionality to wait for order to complete, get an overview of the order status and cancel the order if needed. In the end give the sender the order confirmation.

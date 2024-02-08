@@ -18,6 +18,7 @@ local width, height = term.getSize()
 local line = string.rep("-", width)
 
 -- Introduction
+clearScreen()
 setColor(colors.yellow)
 print("Select the computer's role by entering the corresponding number:")
 setColor(colors.white)
