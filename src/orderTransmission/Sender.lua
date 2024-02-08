@@ -1,11 +1,11 @@
 -- Computer sender setup
-local modem = peripheral.find("modem")  -- find the wireless modem
-if not modem then
+local MODEM = peripheral.find("modem")  -- find the wireless modem
+if not MODEM then
     print("No modem found. Please attach a modem to use this program.")
     return
 end
 
-modem.open(1)  -- open channel 1, change if needed
+MODEM.open(1)  -- open channel 1, change if needed
 
 -- Define color utility function
 local function setColor(color)
@@ -17,7 +17,7 @@ end
 -- Function to send data
 local function sendData(mode, amount)
     local message = { mode, amount }
-    modem.transmit(1, 1, message)  -- transmit on channel 1, change if needed
+    MODEM.transmit(1, 1, message)  -- transmit on channel 1, change if needed
     setColor(colors.green)
     print("Data sent successfully!")
     setColor(colors.white)

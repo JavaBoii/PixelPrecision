@@ -1,8 +1,6 @@
 -- Computer C
 --------------------------------------------------------------------------------------------------------------
 -- Constants
-local DISPENSE_RATE = 1.25  -- Predefined items per second
-local REDSTONE_SIDE = "right"  -- Predefined dispenser side
 
 -- Setup Constants
 local TASKS = 3  -- Total number of tasks, adjust as necessary

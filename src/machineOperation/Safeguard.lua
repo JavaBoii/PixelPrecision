@@ -1,10 +1,8 @@
 -- Computer D
-local COUNT_SIDE = "left"  -- Counting side
-local SHELL_INTERVAL = 1.50  -- Time interval between shells in seconds
 --------------------------------------------------------------------------------------------------------------
 -- Constants
-local DISPENSE_RATE = 1.25  -- Predefined items per second
-local REDSTONE_SIDE = "right"  -- Predefined dispenser side
+local COUNT_SIDE = "left"  -- Counting side
+local SHELL_INTERVAL = 1.50  -- Time interval between shells in seconds
 
 -- Setup Constants
 local TASKS = 3  -- Total number of tasks, adjust as necessary
