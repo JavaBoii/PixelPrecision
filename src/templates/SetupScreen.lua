@@ -1,8 +1,7 @@
--- Computer D
 --------------------------------------------------------------------------------------------------------------
 -- Constants
-local COUNT_SIDE = "left"  -- Counting side
-local SHELL_INTERVAL = 1.50  -- Time interval between shells in seconds
+local DISPENSE_RATE = 1.25  -- Predefined items per second
+local REDSTONE_SIDE = "right"  -- Predefined dispenser side
 
 -- Setup Constants
 local TASKS = 3  -- Total number of tasks, adjust as necessary
@@ -11,7 +10,7 @@ local MONITOR
 local MODEMSIDE = "top"
 local MODEM
 
-local CHANNELS = { 101, 4 }  -- Predefined channels
+local CHANNELS = { 101, 1, 2, 3 }  -- Predefined channels
 --------------------------------------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------------------------------------
@@ -166,8 +165,8 @@ end
 
 -- Skip setup modification
 local function skipSetup()
-    local skip = promptUser("Skip Setup and use defaults? (y/n)", colors.yellow)
-    if skip:lower() == "y" then
+    local skip = promptUser("Skip Setup and use defaults? (yes/no)", colors.yellow)
+    if skip:lower() == "yes" then
         -- Setup defaults
         MODEM = peripheral.wrap(MODEMSIDE)
         return true
@@ -181,21 +180,6 @@ local function displayChannels()
     for i, channel in ipairs(CHANNELS) do
         print("[ " .. i .. " ]" .. " Channel " .. channel)
     end
-end
-
-local function printToMonitor(text)
-    local x, y = MONITOR.getCursorPos()
-    local width, height = MONITOR.getSize()
-
-    if y > height then
-        MONITOR.scroll(1)
-        MONITOR.setCursorPos(1, height)
-    else
-        MONITOR.setCursorPos(1, y)
-    end
-
-    MONITOR.write(text)
-    MONITOR.setCursorPos(1, y + 1)
 end
 
 --------------------------------------------------------------------------------------------------------------
@@ -289,8 +273,8 @@ if not skipSetup() then
     clearSetupScreen()
     updateLoadingBar(2)
     displayChannels()
-    local changeChannels = promptUser("Do you want to change the channels? (y/n)", colors.yellow)
-    if changeChannels:lower() == "y" then
+    local changeChannels = promptUser("Do you want to change the channels? (yes/no)", colors.yellow)
+    if changeChannels:lower() == "yes" then
         while true do
             clearSetupScreen()
             updateLoadingBar(2)
@@ -339,46 +323,3 @@ displayChannels()
 
 informUser("Setup complete. \nMonitor selected:          => " .. MONITORSIDE ..  "\nModem selected             => " .. MODEMSIDE ..  "\nChannels are now configured. \n\nStarting in 5 Seconds...", colors.green)
 --------------------------------------------------------------------------------------------------------------
-
-sleep(5)  -- Give the user time to read the message
-clearScreen()
-print("Safeguard running...")
-
-MONITOR.setTextScale(0.5)  -- Set text scale to 0.5
-MODEM.transmit(101, 101, "Safeguard online")  -- Send online status
-printToMonitor("Redstone Signal Counter online. Listening on channel 4.")
-
--- Function to wait for the next shell
-local function waitForNextShell()
-    local lastSignalTime = os.clock()
-    while true do
-        -- If a signal is received and the time since the last signal is greater than the interval, return the current time
-        if redstone.getInput(COUNT_SIDE) and (os.clock() - lastSignalTime) >= SHELL_INTERVAL then
-            return os.clock() --
-        end
-        sleep(0.1)
-    end
-end
-
--- Main loop
-while true do
-    local event, side, senderChannel, replyChannel, message, senderDistance = os.pullEvent("modem_message")
-    if senderChannel == 4 and type(message) == "number" then
-        local amount = message
-        local count = 0
-        MODEM.transmit(101, 101, "RS counting start") -- Notify Monitoring Station
-        printToMonitor("Starting to count redstone signals for " .. amount .. " items.")
-
-        -- Count redstone signals
-        while count < amount do
-            local signalTime = waitForNextShell()
-            count = count + 1
-            printToMonitor("Counted: " .. count)
-            MODEM.transmit(101, 101, "Counted: " .. count) -- Notify Monitoring Station
-        end
-
-        MODEM.transmit(3, 3, { "order finished", true })  -- Notify Computer C
-        MODEM.transmit(101, 101, "Order finished -> to B") -- Notify Monitoring Station
-        printToMonitor("Counting complete. Notifying Computer B.")
-    end
-end
