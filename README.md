@@ -26,36 +26,21 @@
   </p>
 </div>
 
-<details>
-    <summary>Table of contents</summary>
+---
 
-- [Introduction](#introduction)
-- [Documentation Overview](#documentation-overview)
-    - [Part 1: Automated Powder Charge System](#automated-powder-charge-system)
-        - [System Architecture](#system-architecture)
-        - [Component Details](#component-details)
-            - [Monitoring Station]()
-            - [Powder Charge Manager]()
-            - [Safeguard]()
-            - [Item Manager]()
-            - [Order Management System]()
-            - [Sender]()
-        - [Workflow Overview](#workflow-overview)
-    - [Part 2: Automated Artillery Loading and Aiming System](#automated-artillery-loading-and-aiming-system) (WIP)
-- [Getting Started](#getting-started)
-    - [Version 1: Basic Setup](#version-1-basic-setup)
-        - [Step 1: Arranging Computers and Monitors](#step-1-arranging-computers-and-monitors)
-        - [Step 2: Loading Programs](#step-2-loading-programs)
-    - [Version 2: Running on the provided schematic](#version-2-running-on-the-provided-schematic)
-        - [Required Mods](#required-mods)
-        - [Step 1: Placing the Schematic](#step-1-placing-the-schematic)
-        - [Step 2: Preparing Computers](#step-2-preparing-computers)
-        - [Step 3: Initialization](#step-3-initialization)
-- [Roadmap](#roadmap)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
+<div align="center">
+    <a href="https://github.com/JavaBoii/PixelPrecision/tree/master/SLS"><img src="https://via.placeholder.com/200x200" alt="Project PixelPrecision Logo" height="200"></a>
+    &nbsp;
+    &nbsp;
+    &nbsp;
+    <a href="https://github.com/JavaBoii/PixelPrecision/tree/master/CAAS"><img src="https://via.placeholder.com/200x200" alt="Project PixelPrecision Logo" height="200"></a>
+</div>
 
-</details>
+---
+
+<div align="center">
+    <a href=""></a>
+</div>
 
 
 # PixelPrecision Documentation
