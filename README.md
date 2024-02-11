@@ -30,23 +30,25 @@
 
 <div align="center">
     <a href="https://github.com/JavaBoii/PixelPrecision/tree/master/SLS"><img src="https://via.placeholder.com/200x200" alt="Project PixelPrecision Logo" height="200"></a>
-    &nbsp;
-    &nbsp;
-    &nbsp;
     <a href="https://github.com/JavaBoii/PixelPrecision/tree/master/CAAS"><img src="https://via.placeholder.com/200x200" alt="Project PixelPrecision Logo" height="200"></a>
 </div>
 
 ---
 
 <div align="center">
-    <a href=""></a>
+    <img src="https://via.placeholder.com/1000x100" alt="Project PixelPrecision Logo">
+    <br>
+    <a href=""><img src="https://via.placeholder.com/200x200" alt="Jump to SLS Setup" ></a>
+    <a href=""><img src="https://via.placeholder.com/200x200" alt="Jump to SLS documentation" ></a>
+    <img src="https://via.placeholder.com/90x200" alt="divider" >
+    <img src="https://via.placeholder.com/90x200" alt="divider" >
+    <a href=""><img src="https://via.placeholder.com/200x200" alt="Jump to Setup" ></a>
+    <a href=""><img src="https://via.placeholder.com/200x200" alt="Jump to Setup" ></a>
 </div>
 
 
 # PixelPrecision Documentation
 
-<details>
-    <summary>Introduction, About section and module functionality</summary>
 
 ## Introduction
 
@@ -186,59 +188,7 @@ The Automated Powder Charge System operates through a coordinated workflow:
 4. **Verification**: Safeguard verifying accuracy.
 5. **Completion**: Upon order fulfillment, the system signals completion, readying itself for the next order.
 
-</details>
-
 ---
-
-<!-- GETTING STARTED -->
-# Getting Started with the Automated Powder Charge System
-
-## Version 1: Basic Setup
-
-### Step 1: Arranging Computers and Monitors
-
-1. **Place Computers**: Arrange five computers in a line on your Minecraft world. <br>⚠️ **Ensure there is one block space to the left of the third computer and one block space to the right of the fourth computer, as these spaces are necessary for the system's operation.** ⚠️<br>The second computer will output its redstone signal to the left.
-
-2. **Connect to Wired Network**: Attach wired modems to the bottom of each computer. Connect these modems with network cables to form a single wired network. This network allows the computers to communicate with each other.
-
-3. **Attach Monitors**: Connect monitors to the network. Each computer, except the first one (Monitoring Station), should have its monitor connected to ensure that output can be displayed correctly. The first computer will directly interact with its attached monitor without going through the network.
-
-4. **Attach Wireless Modems**: Place wireless modems on top of each computer, except for the first one. This setup enables wireless communication for sending and receiving data across the system.
-
-<details>
-    <summary><img src="https://icones.pro/wp-content/uploads/2021/06/icone-d-image-orange.png" height="20" alt="image icon"> Computer Setup Overview</summary>
-    <img src="https://media.discordapp.net/attachments/1196171831443468309/1204278791673872405/Link-Structure.png" alt="Computer Setup Overview" height="350">
-</details>
-
-### Step 2: Loading Programs
-
-1. **Load Lua Scripts**: On each computer, load the respective Lua script that is being displayed on your screen by using the following command. <br>
-    ```shell
-    wget https://raw.githubusercontent.com/JavaBoii/PixelPrecision/master/src/setup/RoleAssignmentScript.lua
-    ```
-2. **Initialization Order**: After loading the scripts, start the computers in the following order to ensure proper
-   system initialization:
-    - Monitoring Station
-    - Powder Charge Manager
-    - Safeguard
-    - Item Manager
-    - Order Management System
-
-By following these steps, your Automated Powder Charge System should now be set up and ready for operation.
-
-## Version 2: Running on the provided schematic
-
-### Required Mods Minecraft 1.20.1
-
-To run the system on a predefined schematic, ensure you have the following mods installed in your Minecraft instance:
-
-- Create
-- Create: Big Cannons
-- Create: Connected
-- Create: Design n' Decor
-- Create: Misc & Things
-- CC: Tweaked
-- Tiny Gates
 
 <!-- ROADMAP -->
 ## Roadmap
