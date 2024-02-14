@@ -10,9 +10,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="https://media.discordapp.net/attachments/1196171831443468309/1204156230126543003/minecraft_title.png" alt="Create PixelPrecision Project Logo" height="250">
-  </a>
+<img src="https://github.com/JavaBoii/PixelPrecision/assets/79570962/d3d94f18-888c-4d25-99d5-2d279359455a" alt="Create PixelPrecision Project Logo" height="250">
+
 
   <h3 align="center">Project PixelPrecision</h3>
 
@@ -118,7 +117,7 @@ The architecture comprises six key components, each responsible for distinct asp
 
 <details>
     <summary><img src="https://icones.pro/wp-content/uploads/2021/06/icone-d-image-orange.png" height="20" alt="image icon"> Isometric View of the Plant</summary>
-    <img src="https://media.discordapp.net/attachments/1196171831443468309/1204241235913613322/Computers.png" alt="Isometric view of Shell production" height="650">
+    <img src="https://github.com/JavaBoii/PixelPrecision/assets/79570962/613d2ae6-f366-439d-8711-137682a5b437" alt="Isometric view of Shell production" height="650">
 </details>
 
 ---
@@ -126,7 +125,7 @@ The architecture comprises six key components, each responsible for distinct asp
 ## Component Details
 <details>
     <summary><img src="https://icones.pro/wp-content/uploads/2021/06/icone-d-image-orange.png" height="20" alt="image icon"> Isometric X-Ray View for reference</summary>
-    <img src="https://media.discordapp.net/attachments/1196171831443468309/1204240352605896714/Redstone-xray.png" alt="Isometric X-RAY view of Shell production" height="550">
+    <img src="https://github.com/JavaBoii/PixelPrecision/assets/79570962/3af9159b-88ff-4439-a672-a87cc5487370" alt="Isometric X-RAY view of Shell production" height="550">
 </details>
 
 
@@ -222,7 +221,7 @@ The Automated Powder Charge System operates through a coordinated workflow:
 
 <details>
     <summary><img src="https://icones.pro/wp-content/uploads/2021/06/icone-d-image-orange.png" height="20" alt="image icon"> Computer Setup Overview</summary>
-    <img src="https://media.discordapp.net/attachments/1196171831443468309/1204278791673872405/Link-Structure.png" alt="Computer Setup Overview" height="350">
+    <img src="https://github.com/JavaBoii/PixelPrecision/assets/79570962/65c86488-8aa2-4891-91ed-a647b7551af0" alt="Computer Setup Overview" height="350">
 </details>
 
 ### Step 2: Loading Programs
