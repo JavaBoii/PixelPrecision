@@ -1,7 +1,5 @@
 local requiredGraphics = {
-    "startMenu.nfp",
-    "downloadManagerBg.nfp",
-    "warning.nfp",
+    "startMenu.nfp", "downloadManagerBg.nfp", "warning.nfp"
     -- Add more filenames as needed
 }
 
@@ -23,7 +21,9 @@ end
 function downloadMissingGraphics(missingFiles)
     local allDownloadsSuccessful = true
     for _, file in ipairs(missingFiles) do
-        local url = "https://raw.githubusercontent.com/JavaBoii/PixelPrecision/master/src/setup/graphics/" .. file
+        local url =
+            "https://raw.githubusercontent.com/JavaBoii/PixelPrecision/master/src/setup/graphics/" ..
+                file
         local filePath = "graphics/" .. file
         shell.run("wget", url, filePath)
 
@@ -45,8 +45,6 @@ function downloadMissingGraphics(missingFiles)
         return true
     end
 end
-
-
 
 function promptDownloadResources(missingFiles)
     term.clear()
@@ -73,11 +71,7 @@ end
 
 -- functions
 
-local window = {
-    "start",
-    "SLS_download_manager",
-    "CAAS_download_manager",
-}
+local window = {"start", "SLS_download_manager", "CAAS_download_manager"}
 
 local baseUrls = {
     "https://raw.githubusercontent.com/JavaBoii/PixelPrecision/master/src/machineOperation/",
@@ -87,22 +81,25 @@ local baseUrls = {
 
 local roleMappings = {
     {
-        {name = "MonitoringStation.lua", url = baseUrls[1] .. "MonitoringStation.lua"},
-        {name = "PowderChargeManager.lua", url = baseUrls[1] .. "PowderChargeManager.lua"},
-        {name = "Safeguard.lua", url = baseUrls[1] .. "Safeguard.lua"},
-        {name = "ItemManager.lua", url = baseUrls[1] .. "ItemManager.lua"},
-        {name = "OrderManagementSystem.lua", url = baseUrls[1] .. "OrderManagementSystem.lua"},
-        -- For Sender.lua, specify its unique URL
-        {name = "Sender.lua", url = baseUrls[2] .. "Sender.lua"},
-    },
-    {
+        {
+            name = "MonitoringStation.lua",
+            url = baseUrls[1] .. "MonitoringStation.lua"
+        }, {
+            name = "PowderChargeManager.lua",
+            url = baseUrls[1] .. "PowderChargeManager.lua"
+        }, {name = "Safeguard.lua", url = baseUrls[1] .. "Safeguard.lua"},
+        {name = "ItemManager.lua", url = baseUrls[1] .. "ItemManager.lua"}, {
+            name = "OrderManagementSystem.lua",
+            url = baseUrls[1] .. "OrderManagementSystem.lua"
+        }, -- For Sender.lua, specify its unique URL
+        {name = "Sender.lua", url = baseUrls[2] .. "Sender.lua"}
+    }, {
         {name = "AimingSystem.lua", url = baseUrls[3] .. "AimingSystem.lua"},
         {name = "lol.lua", url = baseUrls[3] .. "lol.lua"},
-        {name = "AzimuthControl.lua", url = baseUrls[3] .. "AzimuthControl.lua"},
+        {name = "AzimuthControl.lua", url = baseUrls[3] .. "AzimuthControl.lua"}
         -- Add more programs with unique URLs as needed
     }
 }
-
 
 local currentWindow = window[1]
 
@@ -228,7 +225,6 @@ function status(mappingIndex)
     end
 end
 
-
 function attemptDownloadAndDisplayStatus(mappingIndex, programIndex, y)
     local programInfo = roleMappings[mappingIndex][programIndex]
     local fileName = programInfo.name
@@ -290,43 +286,40 @@ function attemptDownloadAndDisplayStatus(mappingIndex, programIndex, y)
 
 end
 
-
 function menu()
     while true do
         local event, button, x, y = os.pullEvent("mouse_click")
         local mappingIndex
 
         if currentWindow == window[2] then
-            mappingIndex = 1  -- SLS download manager
+            mappingIndex = 1 -- SLS download manager
         elseif currentWindow == window[3] then
-            mappingIndex = 2  -- CAAS download manager
+            mappingIndex = 2 -- CAAS download manager
         else
-            mappingIndex = nil  -- Not in a download manager window
+            mappingIndex = nil -- Not in a download manager window
         end
 
-        if button == 1 and x >= 1 and x <= 6 and y == 1 then
-            drawMenu()
-        end
+        if button == 1 and x >= 1 and x <= 6 and y == 1 then drawMenu() end
 
-        if currentWindow == window[1] and button == 1 and x >= 12 and x <= 24 and y >= 5 and y <= 13 then
-            drawSLS()
-        end
+        if currentWindow == window[1] and button == 1 and x >= 12 and x <= 24 and
+            y >= 5 and y <= 13 then drawSLS() end
 
-        if currentWindow == window[1] and button == 1 and x >= 29 and x <= 41 and y >= 5 and y <= 13 then
-            drawCAAS()
-        end
+        if currentWindow == window[1] and button == 1 and x >= 29 and x <= 41 and
+            y >= 5 and y <= 13 then drawCAAS() end
 
         if mappingIndex and button == 1 then
             for programIndex = 1, #roleMappings[mappingIndex] do
                 local buttonY = 5 + (programIndex - 1) * 2
                 if y == buttonY and x >= 34 and x <= 38 then -- Adjust these coordinates as necessary
-                    local programName = roleMappings[mappingIndex][programIndex].name
+                    local programName = roleMappings[mappingIndex][programIndex]
+                                            .name
                     if fs.exists(programName) then
                         shell.run(programName)
                     end
                     break
                 elseif y == buttonY and x >= 40 and x <= 50 then
-                    attemptDownloadAndDisplayStatus(mappingIndex, programIndex, y)
+                    attemptDownloadAndDisplayStatus(mappingIndex, programIndex,
+                                                    y)
                     break
                 end
             end
@@ -334,7 +327,7 @@ function menu()
     end
 end
 
---running functions
+-- running functions
 
 function main()
     local missingGraphics = checkRequiredGraphics()
@@ -353,5 +346,4 @@ function main()
 end
 
 main()
-
 
