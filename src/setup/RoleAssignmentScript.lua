@@ -1,6 +1,6 @@
 local requiredGraphics = {
     "startMenu.nfp",
-    "downloadManager.nfp",
+    "downloadManagerBg.nfp",
     "warning.nfp",
     -- Add more filenames as needed
 }
@@ -23,7 +23,7 @@ end
 function downloadMissingGraphics(missingFiles)
     local allDownloadsSuccessful = true
     for _, file in ipairs(missingFiles) do
-        local url = "https://raw.githubusercontent.com/JavaBoii/PixelPrecision/feature/SLS-002-touch-display-setup-JB/src/setup/graphics/" .. file
+        local url = "https://raw.githubusercontent.com/JavaBoii/PixelPrecision/master/src/setup/graphics/" .. file
         local filePath = "graphics/" .. file
         shell.run("wget", url, filePath)
 
