@@ -1,4 +1,4 @@
-# Currently busy with exams in Uni. Will resume work on project somewhere around April (this year)
+# Contributions are welcome
 
 ---
 
