@@ -1,4 +1,5 @@
 # Contributions are welcome
+# Project inactive since im working on https://github.com/blueprint-site/blueprint-api and https://github.com/blueprint-site/blueprint-site.github.io.git
 
 ---
 
